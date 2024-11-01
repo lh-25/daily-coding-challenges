@@ -35,8 +35,10 @@ addOne(1) //=> 2
 addOne(-5) //=> -4
 -----------------------------------------------------------------------------*/
 // Your solution for 01-addOne here:
-
-
+const addOne = (num) => {
+return num + 1
+}
+// console.log(addOne(-10))
 
 
 
@@ -59,7 +61,15 @@ addTwoNumbers(0, 0) //=> 0
 addTwoNumbers('Hello', 5) //=> NaN
 -----------------------------------------------------------------------------*/
 // Your solution for 02-addTwoNumbers here:
+const addTwoNumbers = (num1, num2) => {
+  if (isNaN( num1 )|| isNaN(num2)) {
+    return NaN
+  }else {
+     return num1 + num2
+  }
+}
 
+// console.log(addTwoNumbers('hello',10))
 
 
 
@@ -83,7 +93,6 @@ sumNumbers([2, 10, -5]) //=> 7
 sumNumbers([]) //=> 0
 -----------------------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
-
 
 
 
