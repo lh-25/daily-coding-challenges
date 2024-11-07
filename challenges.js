@@ -94,6 +94,23 @@ sumNumbers([]) //=> 0
 -----------------------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
 
+// const sumNumbers = (arr) => {
+//   let sum = 0
+//   for (let i = 0; i < arr.length; i++) {
+//     sum += arr[i]
+//   } 
+//   return sum
+// }
+const sumNumbers = (arr) => {
+  let sum = 0
+  arr.forEach(num => {
+    sum += num
+  })
+ 
+  return sum
+}
+
+// console.log(sumNumbers([4,5,3]))
 
 
 
@@ -116,11 +133,20 @@ addList(1,50,1.23) //=> 52.23
 addList(7,-12) //=> -5
 -----------------------------------------------------------------------------*/
 // Your solution for 04-addList here:
-
-
-
-
-
+// const addList = (...nums) => {
+//   let sum = 0
+//   nums.forEach(num => {
+//     sum += num
+//   })
+//   return sum
+// }
+// can be a one line solution removing th returns at lines 145, and 146
+const addList = (...nums) => {
+  return nums.reduce((sum, num) => {
+    return sum + num
+  }, 0)
+}
+// console.log(addList(7,-12))
 /*-----------------------------------------------------------------------------
 Challenge: 05-computeRemainder
 
@@ -144,7 +170,14 @@ computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------------------*/
 // Your solution for 05-computeRemainder here:
 
-
+const computeRemainder = (num1, num2) => {
+if (num2 === 0) {
+  return Infinity
+}else {
+  return num1 % num2
+}
+}
+// console.log(computeRemainder(10.5,3))
 
 
 
@@ -170,8 +203,18 @@ range(1,1) //=> []
 range(5,2) //=> "First argument must be less than second"
 -----------------------------------------------------------------------------*/
 // Your solution for 06-range here:
-
-
+const range = (num1, num2) => {
+  if (num1 > num2) {
+    return 'First argument must be less than second'
+  } else {
+    let result = []
+    for(let i = num1; i < num2; i++) {
+      result.push(i)
+    }
+    return result
+  }
+}
+// console.log(range(4,1))
 
 
 
@@ -192,7 +235,10 @@ Examples:
 reverseUpcaseString("SEI Rocks!") //=> "!SKCOR IES" 
 -----------------------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
-
+const reverseUpcaseString = (str) => {
+return str.split('').reverse().join('').toUpperCase()
+}
+// console.log(reverseUpcaseString('SEI Rocks!'))
 
 
 
@@ -214,7 +260,12 @@ removeEnds('SEB Rocks!') //=> "EB Rocks"
 removeEnds('a') //=> "" (empty string)
 -----------------------------------------------------------------------------*/
 // Your solution for 08-removeEnds here:
-
+const removeEnds = (str) => {
+  if (str.length < 3) return ''
+  return str.substring(1, str.length - 1)
+}
+console.log(removeEnds('SEB Rocks!'))
+console.log(removeEnds('Apple'))
 
 
 
